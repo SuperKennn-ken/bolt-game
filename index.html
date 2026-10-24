@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EduArcade – Learn by Playing</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="eduArcade">
+  <div class="bg-blobs"><span></span><span></span><span></span></div>
+
+  <header class="topbar">
+    <div class="logo">🎮 Edu<span>Arcade</span></div>
+    <div class="top-right">
+      <div class="xp">⭐ <b id="xpTotal">0</b> XP</div>
+      <button id="soundBtn" class="icon-btn" title="Sound on/off">🔊</button>
+    </div>
+  </header>
+
+  <main>
+    <!-- GAME MENU -->
+    <section id="hub" class="screen active">
+      <div class="hero">
+        <h1>Learn by <span class="grad">Playing</span></h1>
+        <p>Pick a game. Every round teaches you something new.</p>
+      </div>
+      <div class="game-grid">
+        <button class="game-card" data-game="bolts" style="--c1:#f59e0b;--c2:#ef4444">
+          <div class="gc-icon">🔩</div>
+          <h3>Bolt Brain</h3>
+          <p>Unscrew the bolts. Every 2 bolts, answer a question to keep going.<br><b>Topic: Science &amp; Tech</b></p>
+          <span class="gc-play">Play ▶</span>
+        </button>
+        <button class="game-card" data-game="shooter" style="--c1:#22c55e;--c2:#0ea5e9">
+          <div class="gc-icon">🎯</div>
+          <h3>Operation: Knowledge</h3>
+          <p>You start with only 3 bullets. Answer questions to earn more ammo.<br><b>Topic: Military History &amp; Geography</b></p>
+          <span class="gc-play">Play ▶</span>
+        </button>
+        <button class="game-card" data-game="match" style="--c1:#06b6d4;--c2:#8b5cf6">
+          <div class="gc-icon">🔗</div>
+          <h3>Connect It</h3>
+          <p>Draw a line from each word to its correct meaning.<br><b>Topic: Vocabulary Power Words</b></p>
+          <span class="gc-play">Play ▶</span>
+        </button>
+        <button class="game-card" data-game="flash" style="--c1:#ec4899;--c2:#8b5cf6">
+          <div class="gc-icon">📚</div>
+          <h3>Flash Cards</h3>
+          <p>Flip, learn and master every card in the deck.<br><b>Topic: Business &amp; Money</b></p>
+          <span class="gc-play">Play ▶</span>
+        </button>
+        <button class="game-card" data-game="memory" style="--c1:#a855f7;--c2:#f43f5e">
+          <div class="gc-icon">🧠</div>
+          <h3>Memory Match</h3>
+          <p>Flip the cards to find each word and its meaning.<br><b>Topic: World Capitals</b></p>
+          <span class="gc-play">Play ▶</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- GAME SCREEN -->
+    <section id="gameScreen" class="screen">
+      <div class="game-head">
+        <button id="backBtn" class="btn ghost">← All Games</button>
+        <h2 id="gameTitle"></h2>
+        <div id="gameStats" class="stats"></div>
+      </div>
+      <div id="stage"></div>
+    </section>
+  </main>
+
+  <!-- QUESTION POPUP -->
+  <div id="qModal" class="overlay">
+    <div class="modal" id="qCard">
+      <h2 id="qTitle">Brain Check!</h2>
+      <div class="q-sub" id="qSub"></div>
+      <p class="q-text" id="qText"></p>
+      <div class="q-opts" id="qOpts"></div>
+      <div class="q-fact" id="qFact"></div>
+      <button class="btn" id="qContinue" style="display:none">Continue ➜</button>
+    </div>
+  </div>
+
+  <!-- MESSAGE POPUP -->
+  <div id="msgModal" class="overlay">
+    <div class="modal">
+      <div class="msg-icon" id="msgIcon"></div>
+      <h2 id="msgTitle"></h2>
+      <p class="msg-text" id="msgText"></p>
+      <button class="btn" id="msgBtn"></button>
+    </div>
+  </div>
+
+  <div id="fx"></div>
+</div>
+<script src="questions.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
